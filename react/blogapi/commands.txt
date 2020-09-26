@@ -1,0 +1,2 @@
+npm install @material-ui/icons
+npm i --save material-ui-search-bar

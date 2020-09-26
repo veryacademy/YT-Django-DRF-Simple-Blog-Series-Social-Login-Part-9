@@ -1,0 +1,30 @@
+Part 1
+=============
+py manage.py makemigrations --dry-run --verbosity 3
+py manage.py runserver
+py manage.py createsuperuser 
+pip install coverage
+coverage run --omit='*/venv/*' manage.py test
+coverage html
+pip install djangorestframework
+=============
+Part 3
+pip install djangorestframework-simplejwt
+
+$ curl -X POST -d "email=a@a.com&password=aa610153" http://localhost:8000/api/token/
+
+
+pip install django-filter
+
+Part 9
+=============
+Oauth - Get Token
+
+curl -X POST -d "client_id=T3eUVZJTEDhOdOd9qqXJiR26XbFCC7YIVD2Vh28x&client_secret=KLH7r2iGfZbn3Nji7SSm4j64yUArYFuBCWPsyNM5Tdt0eiqaSL51UCbH4CEn5zGoIx7OM2bIC7rgGwvaoa4kyLJsIAvbKTPlgtb9KEUbdU9WJ58oonBLb6UwCALSJQkw&grant_type=password&username=a@a.com&password=aa610153" http://localhost:8000/auth/token
+
+Oauth - Convert Facebook Token
+
+curl -X POST -d "grant_type=convert_token&client_id=zSPoGtzGWjsWUedEgMq3bzfkecmerIpfUEfVu1l2&client_secret=nL2wwNM7OKggfmlASt6Sp6dniaNWLsYLi8S7Ju1HujxsJVVXef5tHTH7SIdKIKzSY67VfQ0dmOSCVAMwPhYR5w1DCrv49sl95USiHRvkOvat5VrhSA3OUQWHoJtzedCb&backend=facebook&token=EAAGCUanxCuwBANvMUkzf4ZCjFglhC6vZADtt4xol9KhF0n9bPkubFgZADZC3EDEjWN7F8txKhjJbewBkl5VZBlZCZA5RJ9Xtxs5qTCxBx1VxGDsjzVRbsJMktTkZBvcNrTWzkfjwGlgZB8JOz8VByEdAZAPWPcnOnR8NjLBCFu4OrbHirZCSScJpgHXeofluudRwDcZD" http://localhost:8000/auth/convert-token
+
+curl -X POST -d "grant_type=convert_token&client_id=gMr6qHMnG5LEj3wKnmPjr7EdJ5ZFM10oX29pBORh&client_secret=<client_secret>&backend=facebook&token=<facebook_token>" http://localhost:8000/auth/convert-token
+
